@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+.venv/
+venv/
+.python-version
+
+# Tooling
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ML artifacts
+mlruns/
+mlflow.db
+checkpoints/
+runs/
+wandb/
+*.ckpt
+*.pt
+*.pth
+
+# Visualization output
+out/
+*.gif
+*.mp4
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
