@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>elevator-rl — three policies racing</title>
+  <meta
+    name="description"
+    content="SCAN vs Nearest-Car vs Random elevator dispatch policies racing on the same building and the same passenger arrivals. Scrub through any episode."
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>elevator-rl</h1>
+    <p class="tagline">
+      Three dispatching policies racing on the same building, same passengers,
+      same seed. SCAN (the classic), Nearest-Car (greedy), and Random (sanity
+      floor). PPO will land as the fourth lane once it can beat SCAN.
+    </p>
+    <p class="meta">
+      <a href="https://github.com/dandanyoou/elevatorservice" target="_blank" rel="noopener">GitHub →</a>
+      &nbsp;·&nbsp;
+      <a href="#about" id="about-link">what am I looking at?</a>
+    </p>
+  </header>
+
+  <section id="controls">
+    <div class="row">
+      <label>
+        episode:
+        <select id="seed-picker"></select>
+      </label>
+      <span id="metrics-line" class="metrics"></span>
+    </div>
+
+    <div class="row scrub-row">
+      <button id="play-pause" type="button">▶ play</button>
+      <input
+        type="range"
+        id="scrub"
+        min="0"
+        max="1199"
+        value="0"
+        step="1"
+        aria-label="step"
+      />
+      <span id="step-label" class="step-label">step 0</span>
+      <label class="speed-label">
+        speed
+        <select id="speed">
+          <option value="1">1×</option>
+          <option value="2" selected>2×</option>
+          <option value="5">5×</option>
+          <option value="10">10×</option>
+          <option value="30">30× (skim)</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <main id="stage">
+    <article class="lane" data-policy="scan">
+      <h2>SCAN</h2>
+      <p class="lane-summary"></p>
+      <canvas width="320" height="540" aria-label="SCAN building"></canvas>
+    </article>
+    <article class="lane" data-policy="nearest">
+      <h2>Nearest-Car</h2>
+      <p class="lane-summary"></p>
+      <canvas width="320" height="540" aria-label="Nearest-Car building"></canvas>
+    </article>
+    <article class="lane" data-policy="random">
+      <h2>Random</h2>
+      <p class="lane-summary"></p>
+      <canvas width="320" height="540" aria-label="Random building"></canvas>
+    </article>
+  </main>
+
+  <section id="highlights">
+    <h2>Highlights</h2>
+    <p class="hint">
+      Hand-picked moments where the policies diverged. Click to jump.
+    </p>
+    <ul id="highlight-list"></ul>
+  </section>
+
+  <section id="about">
+    <h2>what am I looking at?</h2>
+    <p>
+      Each column is a building with 3 elevators serving 10 floors. The same
+      Poisson passenger arrivals (morning rush: lobby → upper floors) are fed
+      to all three policies. The same seed = identical arrivals = fair
+      comparison. Wait time accumulates; the policy with the lowest average
+      wait wins.
+    </p>
+    <p>
+      Glyphs: <code>↑</code>/<code>↓</code> = elevator direction,
+      <code>●N</code> = N passengers in car,
+      <code>∎</code> = servicing (doors open),
+      hollow triangles on the right of each floor = pending hall calls,
+      the number beside them = passengers waiting on that floor.
+    </p>
+    <p>
+      Built as a portfolio piece: PPO training is in progress and will drop in
+      as a fourth lane when it can beat SCAN by 15% on average wait time. The
+      whole dashboard is static — three pre-rendered JSON traces playing back
+      from <code>web/traces/</code>. No backend, no WebSocket.
+    </p>
+  </section>
+
+  <footer>
+    <span>Source: <a href="https://github.com/dandanyoou/elevatorservice" target="_blank" rel="noopener">github.com/dandanyoou/elevatorservice</a></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

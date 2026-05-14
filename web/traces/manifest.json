@@ -1,0 +1,347 @@
+{
+  "episodes": [
+    {
+      "file": "scan-seed1000.json",
+      "policy": "scan",
+      "seed": 1000,
+      "metrics": {
+        "completed": 310.0,
+        "avg_wait_s": 42.181,
+        "avg_journey_s": 74.174,
+        "throughput": 0.258
+      }
+    },
+    {
+      "file": "scan-seed1001.json",
+      "policy": "scan",
+      "seed": 1001,
+      "metrics": {
+        "completed": 337.0,
+        "avg_wait_s": 40.846,
+        "avg_journey_s": 71.941,
+        "throughput": 0.281
+      }
+    },
+    {
+      "file": "scan-seed1002.json",
+      "policy": "scan",
+      "seed": 1002,
+      "metrics": {
+        "completed": 343.0,
+        "avg_wait_s": 38.227,
+        "avg_journey_s": 69.528,
+        "throughput": 0.286
+      }
+    },
+    {
+      "file": "scan-seed1003.json",
+      "policy": "scan",
+      "seed": 1003,
+      "metrics": {
+        "completed": 336.0,
+        "avg_wait_s": 46.083,
+        "avg_journey_s": 79.551,
+        "throughput": 0.28
+      }
+    },
+    {
+      "file": "scan-seed1004.json",
+      "policy": "scan",
+      "seed": 1004,
+      "metrics": {
+        "completed": 357.0,
+        "avg_wait_s": 56.557,
+        "avg_journey_s": 90.317,
+        "throughput": 0.297
+      }
+    },
+    {
+      "file": "scan-seed1005.json",
+      "policy": "scan",
+      "seed": 1005,
+      "metrics": {
+        "completed": 351.0,
+        "avg_wait_s": 47.484,
+        "avg_journey_s": 79.752,
+        "throughput": 0.292
+      }
+    },
+    {
+      "file": "scan-seed1006.json",
+      "policy": "scan",
+      "seed": 1006,
+      "metrics": {
+        "completed": 333.0,
+        "avg_wait_s": 49.243,
+        "avg_journey_s": 81.682,
+        "throughput": 0.278
+      }
+    },
+    {
+      "file": "scan-seed1007.json",
+      "policy": "scan",
+      "seed": 1007,
+      "metrics": {
+        "completed": 317.0,
+        "avg_wait_s": 39.271,
+        "avg_journey_s": 70.123,
+        "throughput": 0.264
+      }
+    },
+    {
+      "file": "scan-seed1008.json",
+      "policy": "scan",
+      "seed": 1008,
+      "metrics": {
+        "completed": 328.0,
+        "avg_wait_s": 37.284,
+        "avg_journey_s": 67.067,
+        "throughput": 0.273
+      }
+    },
+    {
+      "file": "scan-seed1009.json",
+      "policy": "scan",
+      "seed": 1009,
+      "metrics": {
+        "completed": 319.0,
+        "avg_wait_s": 41.207,
+        "avg_journey_s": 70.643,
+        "throughput": 0.266
+      }
+    },
+    {
+      "file": "nearest-seed1000.json",
+      "policy": "nearest",
+      "seed": 1000,
+      "metrics": {
+        "completed": 318.0,
+        "avg_wait_s": 30.673,
+        "avg_journey_s": 60.566,
+        "throughput": 0.265
+      }
+    },
+    {
+      "file": "nearest-seed1001.json",
+      "policy": "nearest",
+      "seed": 1001,
+      "metrics": {
+        "completed": 347.0,
+        "avg_wait_s": 27.72,
+        "avg_journey_s": 55.478,
+        "throughput": 0.289
+      }
+    },
+    {
+      "file": "nearest-seed1002.json",
+      "policy": "nearest",
+      "seed": 1002,
+      "metrics": {
+        "completed": 259.0,
+        "avg_wait_s": 135.672,
+        "avg_journey_s": 169.154,
+        "throughput": 0.216
+      }
+    },
+    {
+      "file": "nearest-seed1003.json",
+      "policy": "nearest",
+      "seed": 1003,
+      "metrics": {
+        "completed": 194.0,
+        "avg_wait_s": 174.33,
+        "avg_journey_s": 211.716,
+        "throughput": 0.162
+      }
+    },
+    {
+      "file": "nearest-seed1004.json",
+      "policy": "nearest",
+      "seed": 1004,
+      "metrics": {
+        "completed": 199.0,
+        "avg_wait_s": 205.045,
+        "avg_journey_s": 240.91,
+        "throughput": 0.166
+      }
+    },
+    {
+      "file": "nearest-seed1005.json",
+      "policy": "nearest",
+      "seed": 1005,
+      "metrics": {
+        "completed": 171.0,
+        "avg_wait_s": 218.006,
+        "avg_journey_s": 252.094,
+        "throughput": 0.142
+      }
+    },
+    {
+      "file": "nearest-seed1006.json",
+      "policy": "nearest",
+      "seed": 1006,
+      "metrics": {
+        "completed": 340.0,
+        "avg_wait_s": 33.553,
+        "avg_journey_s": 63.271,
+        "throughput": 0.283
+      }
+    },
+    {
+      "file": "nearest-seed1007.json",
+      "policy": "nearest",
+      "seed": 1007,
+      "metrics": {
+        "completed": 318.0,
+        "avg_wait_s": 30.943,
+        "avg_journey_s": 61.028,
+        "throughput": 0.265
+      }
+    },
+    {
+      "file": "nearest-seed1008.json",
+      "policy": "nearest",
+      "seed": 1008,
+      "metrics": {
+        "completed": 338.0,
+        "avg_wait_s": 30.612,
+        "avg_journey_s": 59.429,
+        "throughput": 0.282
+      }
+    },
+    {
+      "file": "nearest-seed1009.json",
+      "policy": "nearest",
+      "seed": 1009,
+      "metrics": {
+        "completed": 329.0,
+        "avg_wait_s": 25.83,
+        "avg_journey_s": 53.006,
+        "throughput": 0.274
+      }
+    },
+    {
+      "file": "random-seed1000.json",
+      "policy": "random",
+      "seed": 1000,
+      "metrics": {
+        "completed": 99.0,
+        "avg_wait_s": 156.394,
+        "avg_journey_s": 273.838,
+        "throughput": 0.083
+      }
+    },
+    {
+      "file": "random-seed1001.json",
+      "policy": "random",
+      "seed": 1001,
+      "metrics": {
+        "completed": 102.0,
+        "avg_wait_s": 63.088,
+        "avg_journey_s": 178.118,
+        "throughput": 0.085
+      }
+    },
+    {
+      "file": "random-seed1002.json",
+      "policy": "random",
+      "seed": 1002,
+      "metrics": {
+        "completed": 128.0,
+        "avg_wait_s": 207.008,
+        "avg_journey_s": 335.195,
+        "throughput": 0.107
+      }
+    },
+    {
+      "file": "random-seed1003.json",
+      "policy": "random",
+      "seed": 1003,
+      "metrics": {
+        "completed": 110.0,
+        "avg_wait_s": 150.482,
+        "avg_journey_s": 258.509,
+        "throughput": 0.092
+      }
+    },
+    {
+      "file": "random-seed1004.json",
+      "policy": "random",
+      "seed": 1004,
+      "metrics": {
+        "completed": 144.0,
+        "avg_wait_s": 117.667,
+        "avg_journey_s": 229.174,
+        "throughput": 0.12
+      }
+    },
+    {
+      "file": "random-seed1005.json",
+      "policy": "random",
+      "seed": 1005,
+      "metrics": {
+        "completed": 128.0,
+        "avg_wait_s": 175.062,
+        "avg_journey_s": 299.969,
+        "throughput": 0.107
+      }
+    },
+    {
+      "file": "random-seed1006.json",
+      "policy": "random",
+      "seed": 1006,
+      "metrics": {
+        "completed": 110.0,
+        "avg_wait_s": 128.018,
+        "avg_journey_s": 228.582,
+        "throughput": 0.092
+      }
+    },
+    {
+      "file": "random-seed1007.json",
+      "policy": "random",
+      "seed": 1007,
+      "metrics": {
+        "completed": 112.0,
+        "avg_wait_s": 131.0,
+        "avg_journey_s": 239.75,
+        "throughput": 0.093
+      }
+    },
+    {
+      "file": "random-seed1008.json",
+      "policy": "random",
+      "seed": 1008,
+      "metrics": {
+        "completed": 105.0,
+        "avg_wait_s": 199.543,
+        "avg_journey_s": 311.733,
+        "throughput": 0.087
+      }
+    },
+    {
+      "file": "random-seed1009.json",
+      "policy": "random",
+      "seed": 1009,
+      "metrics": {
+        "completed": 125.0,
+        "avg_wait_s": 153.736,
+        "avg_journey_s": 254.848,
+        "throughput": 0.104
+      }
+    }
+  ],
+  "config": {
+    "schema_version": 1,
+    "simulator_version": "0.1.0",
+    "pattern": "morning",
+    "num_elevators": 3,
+    "num_floors": 10,
+    "total_steps": 1200,
+    "policies": [
+      "scan",
+      "nearest",
+      "random"
+    ]
+  }
+}

@@ -42,3 +42,4 @@ Thumbs.db
 # Local tooling (Claude Code / gstack skills)
 .claude/
 gstack/
+.gstack/

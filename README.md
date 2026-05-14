@@ -189,15 +189,68 @@ elevator-rl/
 
 ---
 
+## 시각 대시보드 (Phase 4 v0 — Replay + Scrub)
+
+세 정책(SCAN / Nearest-Car / Random)이 **같은 건물, 같은 승객, 같은 시드**에서
+동시에 돌아가는 모습을 보여주는 정적 웹 페이지. PPO 학습이 SCAN을 이기면
+네 번째 lane으로 들어옵니다.
+
+![dashboard](assets/demo.png)
+
+### 로컬에서 띄우기
+
+```bash
+# 1) trace 생성 (한 번만)
+python -m scripts.emit_traces --out web/traces --seeds 10 --steps 1200 --pattern morning
+
+# 2) 정적 서버
+python -m http.server --directory web 8765
+# 브라우저에서 http://localhost:8765
+```
+
+키 단축키: `Space` = play/pause, `←/→` = -30/+30 step, scrub bar로 점프.
+
+### 구조
+
+```
+web/
+├── index.html       # 페이지 구조 + about 섹션
+├── style.css        # 다크 테마, 3-col 그리드, 모바일 1-col
+├── app.js           # Canvas 렌더러 + 동기 playback clock + scrub
+└── traces/
+    ├── manifest.json
+    └── {policy}-seed{NNNN}.json   # ~30개
+```
+
+### 배포 (Cloudflare Pages)
+
+`web/`을 그대로 정적으로 서빙하면 됩니다.
+
+```bash
+# 첫 배포 (Cloudflare 계정에서 1번)
+# 1. Cloudflare Pages → Create project → Connect Git → 이 repo 선택
+# 2. Build command: (비워둠)
+# 3. Build output directory: web
+# 4. Save and Deploy
+```
+
+trace는 사람이 직접 생성해서 커밋합니다 (CI가 매번 돌리면 demo 일관성이
+흔들리므로 의도적인 결정 — 자세한 건 design doc 참조).
+
+---
+
 ## 다음 단계
 
+- [x] 시각 대시보드 v0 (정적 replay + scrub) — `web/`
 - [ ] `training/train.py` — PPO + MLflow 로깅
 - [ ] PPO vs SCAN 동일 시드 100 episode 비교 (AWT 15%↓ 검증)
+- [ ] PPO를 네 번째 trace로 대시보드에 추가
 - [ ] action mask 옵션 (서비스 중 step에서)
-- [ ] `server/main.py` — FastAPI 추론 + WebSocket
-- [ ] `frontend/` — React 대시보드 (Recharts 메트릭 + 실시간 시뮬 뷰)
-- [ ] `docker-compose.yml` — Postgres + Redis + MLflow 통합
+- [ ] 5초짜리 README GIF (Playwright + ffmpeg)
+- [ ] highlight 자동 검출 (`AWT 2x 이상 차이` 규칙)
 - [ ] Ray RLlib 마이그레이션 (멀티 에이전트 실험)
+
+> design doc: `~/.gstack/projects/dandanyoou-elevatorservice/...-design-*.md`
 
 ---
 
