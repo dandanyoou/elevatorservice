@@ -143,6 +143,7 @@ def main() -> None:
         "--policies",
         nargs="+",
         default=list(POLICIES.keys()),
+        choices=list(POLICIES.keys()),
         help="subset of policies to emit",
     )
     args = p.parse_args()
