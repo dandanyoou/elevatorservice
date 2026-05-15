@@ -36,6 +36,7 @@
     speed: 2,
     lastTick: 0,
     highlights: [],
+    loadToken: 0,
   };
 
   const dom = {
@@ -381,6 +382,7 @@
   // --------------------------------------------------------------- seed load
 
   async function loadSeed(seed) {
+    const myToken = ++state.loadToken;
     state.seed = seed;
     state.step = 0;
     state.traces = {};
@@ -388,9 +390,11 @@
       const entry = findFile(state.manifest, p, seed);
       if (!entry) return;
       const t = await loadTrace(entry.file);
+      if (myToken !== state.loadToken) return; // stale load, drop result
       state.traces[p] = t;
     });
     await Promise.all(promises);
+    if (myToken !== state.loadToken) return; // stale load, abort UI update
 
     const t = state.traces[POLICIES[0]];
     if (t) {
